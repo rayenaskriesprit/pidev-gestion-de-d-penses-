@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AdminController">
+    <Label text="Admin Panel - Manage Reservations"/>
+    <TableView fx:id="reservationTable" prefHeight="200" prefWidth="400">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+            <TableColumn text="Status" fx:id="statusColumn" prefWidth="100"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <Button text="Approve (+)" onAction="#approveReservation"/>
+        <Button text="Delete (-)" onAction="#deleteReservation"/>
+    </HBox>
+</VBox>

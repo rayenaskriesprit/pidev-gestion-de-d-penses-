@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ReservationController">
+    <Label text="My Reservations"/>
+    <TableView fx:id="bookingTable" prefHeight="300" prefWidth="800">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50"/>
+            <TableColumn text="Event" fx:id="eventColumn" prefWidth="150"/>
+            <TableColumn text="Flight" fx:id="flightColumn" prefWidth="150"/>
+            <TableColumn text="Hotel" fx:id="hotelColumn" prefWidth="150"/>
+            <TableColumn text="Transport" fx:id="transportColumn" prefWidth="150"/>
+            <TableColumn text="Conference" fx:id="conferenceColumn" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

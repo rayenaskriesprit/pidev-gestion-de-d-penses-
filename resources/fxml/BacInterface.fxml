@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.BacController" stylesheets="@../css/styles.css">
+    <Label text="Back Office - Payment Records" styleClass="title-label"/>
+
+    <!-- Search Bar -->
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="search-container">
+        <Label text="Search by Nom Titulaire:" styleClass="search-label"/>
+        <TextField fx:id="searchField" promptText="Enter name..." styleClass="search-field"/>
+    </HBox>
+
+    <!-- Table View -->
+    <TableView fx:id="paymentTable" prefHeight="350" prefWidth="800" styleClass="table-view">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="50" styleClass="table-column"/>
+            <TableColumn text="Nom Titulaire" fx:id="nomTitulaireColumn" prefWidth="150" styleClass="table-column"/>
+            <TableColumn text="ID Reservation" fx:id="idReservationColumn" prefWidth="100" styleClass="table-column"/>
+            <TableColumn text="Numéro Carte" fx:id="numeroCarteColumn" prefWidth="150" styleClass="table-column"/>
+            <TableColumn text="Date Expiration" fx:id="dateExpirationColumn" prefWidth="120" styleClass="table-column"/>
+            <TableColumn text="CVV" fx:id="cvvColumn" prefWidth="50" styleClass="table-column"/>
+            <TableColumn text="Montant" fx:id="montantColumn" prefWidth="80" styleClass="table-column"/>
+        </columns>
+    </TableView>
+
+    <!-- Buttons -->
+    <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="button-container">
+        <Button text="Confirm Payment" onAction="#confirmPayment" styleClass="confirm-button"/>
+    </HBox>
+</VBox>
