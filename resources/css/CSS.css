@@ -1,0 +1,63 @@
+/* Root style for the entire application */
+.root {
+    -fx-background-color: #f4f4f4; /* Light gray background */
+    -fx-font-family: "Arial";
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: #bdc3c7; /* Light gray border */
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Event List */
+.event-list {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7; /* Light gray border */
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.event-list .list-cell {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1; /* Very light gray border */
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-margin: 5px;
+}
+
+.event-list .list-cell:filled:selected {
+    -fx-background-color: #3498db; /* Blue for selected item */
+    -fx-text-fill: white;
+}
+
+.event-list .list-cell:filled:hover {
+    -fx-background-color: #ecf0f1; /* Light gray on hover */
+}
+
+/* Custom Event Cell Styles */
+.event-cell {
+    -fx-spacing: 10px;
+}
+
+.event-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Dark blue */
+}
+
+.event-detail {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d; /* Gray */
+}
+
+.event-icon {
+    -fx-fit-width: 16px;
+    -fx-fit-height: 16px;
+}
