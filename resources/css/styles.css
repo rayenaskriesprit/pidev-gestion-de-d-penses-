@@ -1,136 +1,95 @@
-/* General Styles */
-.root {
-    -fx-background-color: #f9fafb;
+/* Root AnchorPane styling for a full-page payment experience */
+.anchor-pane {
+    -fx-background-color: linear-gradient(to bottom, #e8ecef, #f8f9fa); /* Subtle gradient background */
+    -fx-padding: 40px; /* Generous padding for a spacious feel */
 }
 
-.header-container {
-    -fx-padding: 20;
-    -fx-background-color: #ffffff;
-    -fx-border-bottom: 1px solid #eaeaea;
+/* Create a card-like container for the form */
+.anchor-pane > .content {
+    -fx-background-color: #ffffff; /* White card background */
+    -fx-background-radius: 12px; /* Rounded corners */
+    -fx-border-radius: 12px;
+    -fx-border-color: #e0e0e0; /* Light border */
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 5); /* Soft shadow for elevation */
+    -fx-padding: 30px; /* Inner padding for the form */
+    -fx-max-width: 600px; /* Constrain width like a premium payment card */
+    -fx-alignment: CENTER; /* Center content */
 }
 
-.title-label {
-    -fx-font-size: 24px;
+/* Since we can't add a .content node via CSS, apply these to children manually */
+.anchor-pane .label,
+.anchor-pane .text-field,
+.anchor-pane .button {
+    -fx-background-color: transparent; /* Ensure no override */
+}
+
+/* Styling the Label (title) */
+.label {
+    -fx-font-family: "Segoe UI"; /* Modern, clean font (or Arial if unavailable) */
+    -fx-font-size: 24px; /* Larger for a bold header */
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
+    -fx-text-fill: #2c3e50; /* Dark blue-gray for sophistication */
+    -fx-padding: 0 0 20px 0; /* Space below title */
 }
 
-.subtitle-label {
+/* Styling all TextFields */
+.text-field {
+    -fx-background-color: #ffffff; /* White input background */
+    -fx-border-color: #ced4da; /* Light gray border */
+    -fx-border-width: 0 0 2px 0; /* Underline style for a sleek look */
+    -fx-border-radius: 0; /* No rounded corners for underline */
+    -fx-background-radius: 0;
+    -fx-padding: 10px 0; /* Padding for text alignment */
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16px; /* Slightly larger for readability */
+    -fx-text-fill: #495057; /* Dark gray text */
+    -fx-prompt-text-fill: #adb5bd; /* Lighter gray prompt */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 1); /* Subtle shadow */
+}
+
+/* Focus state with animation */
+.text-field:focused {
+    -fx-border-color: #007bff; /* Vibrant blue for focus */
+    -fx-border-width: 0 0 2px 0;
+    -fx-background-color: #f8f9fa; /* Slight highlight */
+    -fx-transition: -fx-border-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Specific styling for smaller fields (Expiry Month, Year, CVV) */
+#expiryMonthField, #expiryYearField, #cvvField {
+    -fx-pref-width: 140px; /* Reinforce your FXML width */
+}
+
+/* Styling the Button */
+.button {
+    -fx-background-color: #28a745; /* Green for "pay/save" (premium feel) */
+    -fx-text-fill: #ffffff; /* White text */
+    -fx-font-family: "Segoe UI";
     -fx-font-size: 16px;
-    -fx-text-fill: #666;
-}
-
-.form-container {
-    -fx-padding: 20;
-    -fx-background-color: #ffffff;
-    -fx-border-radius: 10;
-    -fx-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.input-field {
-    -fx-pref-width: 300;
-    -fx-font-size: 14px;
-    -fx-background-color: #f9fafb;
-    -fx-border-color: #eaeaea;
-    -fx-border-radius: 5;
-    -fx-padding: 10;
-    -fx-margin: 1;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 2, 0, 0, 0);
-}
-
-.input-field:hover {
-    -fx-border-color: #007bff;
-}
-
-.primary-button {
-    -fx-background-color: #007bff;
-    -fx-text-fill: white;
-    -fx-font-size: 16px;
-    -fx-padding: 10 20;
-    -fx-border-radius: 5;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 4, 0, 0, 1);
-}
-
-.primary-button:hover {
-    -fx-background-color: #0056b3;
-}
-
-.secondary-button {
-    -fx-background-color: #f9fafb;
-    -fx-text-fill: #333;
-    -fx-font-size: 16px;
-    -fx-padding: 10 20;
-    -fx-border-color: #eaeaea;
-    -fx-border-radius: 5;
-    -fx-cursor: hand;
-}
-
-.secondary-button:hover {
-    -fx-background-color: #eaeaea;
-}
-
-.footer-container {
-    -fx-padding: 20;
-    -fx-background-color: #ffffff;
-    -fx-border-top: 1px solid #eaeaea;
-}
-/* General Styles */
-.root {
-    -fx-background-color: #f9fafb;
-}
-
-.title-label {
-    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
-    -fx-padding: 10;
-}
-
-.search-container {
-    -fx-padding: 10;
-    -fx-alignment: CENTER_LEFT;
-}
-
-.search-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #666;
-}
-
-.search-field {
-    -fx-pref-width: 250;
-    -fx-font-size: 14px;
-    -fx-background-color: #f9fafb;
-    -fx-border-color: #eaeaea;
-    -fx-border-radius: 5;
-    -fx-padding: 5;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 2, 0, 0, 0);
-}
-
-.table-view {
-    -fx-border-color: #eaeaea;
-    -fx-border-radius: 5;
-    -fx-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.table-column {
-    -fx-alignment: CENTER;
-}
-
-.button-container {
-    -fx-padding: 10;
-}
-
-.confirm-button {
-    -fx-background-color: #28a745;
-    -fx-text-fill: white;
-    -fx-font-size: 16px;
-    -fx-padding: 10 20;
-    -fx-border-radius: 5;
+    -fx-padding: 12px 0; /* Tall button */
+    -fx-background-radius: 8px; /* Rounded corners */
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3); /* Shadow for depth */
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 4, 0, 0, 1);
+    -fx-transition: -fx-background-color 0.2s ease-in-out; /* Smooth hover transition */
 }
 
-.confirm-button:hover {
-    -fx-background-color: #218838;
+/* Hover effect */
+.button:hover {
+    -fx-background-color: #218838; /* Darker green */
+}
+
+/* Pressed effect */
+.button:pressed {
+    -fx-background-color: #1e7e34; /* Even darker green */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 1); /* Reduced shadow */
+}
+
+/* Disabled state */
+.button:disabled {
+    -fx-background-color: #6c757d; /* Grayed out */
+    -fx-text-fill: #ced4da; /* Light gray text */
+    -fx-opacity: 0.8;
 }
