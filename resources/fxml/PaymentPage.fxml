@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.PaymentController" stylesheets="@../css/styles.css">
-    <top>
-        <VBox alignment="CENTER" spacing="10" styleClass="header-container">
-            <Label text="Secure Payment" styleClass="title-label"/>
-            <Label text="Enter your payment details below" styleClass="subtitle-label"/>
-        </VBox>
-    </top>
-    <center>
-        <VBox alignment="CENTER" spacing="20" styleClass="form-container">
-            <TextField fx:id="nomTitulaireField" promptText="Nom du Titulaire" styleClass="input-field"/>
-            <TextField fx:id="numeroCarteField" promptText="Numéro de Carte" styleClass="input-field"/>
-            <HBox spacing="20" alignment="CENTER">
-                <TextField fx:id="dateExpirationField" promptText="Date d'expiration (MM/YY)" styleClass="input-field" prefWidth="150"/>
-                <TextField fx:id="cvvField" promptText="CVV" styleClass="input-field" prefWidth="100"/>
-            </HBox>
-        </VBox>
-    </center>
-    <bottom>
-        <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="footer-container">
-            <Button text="Cancel" styleClass="secondary-button"/>
-            <Button text="Pay Now" onAction="#savePayment" styleClass="primary-button"/>
-        </HBox>
-    </bottom>
-</BorderPane>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.PaymentController" stylesheets="@../css/styles.css">
+    <children>
+        <Label text="Payment Details" layoutX="250.0" layoutY="20.0" />
+        <TextField fx:id="nomTitulaireField" layoutX="250.0" layoutY="60.0" promptText="Card Holder Name" prefWidth="300.0"/>
+        <TextField fx:id="numeroCarteField" layoutX="250.0" layoutY="120.0" promptText="Card Number" prefWidth="300.0"/>
+        <TextField fx:id="expiryMonthField" layoutX="250.0" layoutY="180.0" promptText="Expiry Month" prefWidth="140.0"/>
+        <TextField fx:id="expiryYearField" layoutX="410.0" layoutY="180.0" promptText="Expiry Year" prefWidth="140.0"/>
+        <TextField fx:id="cvvField" layoutX="250.0" layoutY="240.0" promptText="CVV" prefWidth="140.0"/>
+        <TextField fx:id="emailField" layoutX="250.0" layoutY="300.0" promptText="Email Address" prefWidth="300.0"/>
+
+        <Button text="Save Payment" layoutX="250.0" layoutY="360.0" prefWidth="300.0" onAction="#savePayment"/>
+    </children>
+</AnchorPane>
