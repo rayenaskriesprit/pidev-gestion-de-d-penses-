@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<VBox spacing="0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.HistoryController"
+      styleClass="root" stylesheets="@../css/CSS.css">
+    <!-- Rest of your layout -->
+
+    <!-- Navbar -->
+    <HBox spacing="20" style="-fx-background-color: #3498db; -fx-padding: 15; ">
+        <Label text="Booking Management System" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <Pane HBox.hgrow="ALWAYS"/> <!-- Spacer -->
+        <Button text="Home" onAction="#navigateToHome" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+        <Button text="Bookings" onAction="#navigateToDestination" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+    </HBox>
+
+    <!-- Hero Section -->
+    <VBox spacing="20" style="-fx-padding: 20; -fx-alignment: center;">
+        <ImageView fx:id="bannerImage" fitHeight="200" preserveRatio="true" smooth="true">
+            <image>
+                <Image url="@/images/rayen.png" />
+            </image>
+        </ImageView>
+        <Label text="Your Booking History at a Glance"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333; -fx-padding: 10;" />
+        <Label text="Manage, search, and review your bookings effortlessly."
+               style="-fx-font-size: 16px; -fx-text-fill: #666; -fx-padding: 0 0 20 0; font-family: 'GreatVibes';" />
+    </VBox>
+
+    <!-- Search Bar -->
+    <HBox alignment="CENTER" spacing="10" styleClass="search-container" style="-fx-padding: 20;">
+        <TextField fx:id="searchField" promptText="Search by event Name or Booking ID"
+                   style="-fx-prompt-text-fill: #aaa; -fx-font-size: 14px;" />
+        <Button fx:id="searchButton" text="Search" onAction="#handleSearch"
+                style="-fx-font-size: 14px; -fx-padding: 8 16;" />
+    </HBox>
+
+    <!-- ListView Section (Centered and Smaller) -->
+    <AnchorPane VBox.vgrow="ALWAYS" style="-fx-padding: 20;">
+        <VBox alignment="CENTER" spacing="15" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" style="-fx-padding: 0;">
+
+            <Label text="Booking Details"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2C3E50; -fx-padding: 5px 0 10px 0;" />
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefViewportHeight="700" VBox.vgrow="ALWAYS" styleClass="scroll-pane">
+                <ListView fx:id="bookingsList" prefWidth="600" prefHeight="520" onMouseClicked="#handleRowClick"
+                          styleClass="event-list" />
+            </ScrollPane>
+        </VBox>
+    </AnchorPane>
+
+    <!-- Footer -->
+    <HBox spacing="10" style="-fx-padding: 20; -fx-alignment: center;">
+        <Label text="© 2023 Booking Management System. All rights reserved."
+               style="-fx-font-size: 12px; -fx-text-fill: #666;" />
+    </HBox>
+</VBox>
