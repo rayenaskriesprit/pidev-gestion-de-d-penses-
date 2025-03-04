@@ -61,3 +61,132 @@
     -fx-fit-width: 16px;
     -fx-fit-height: 16px;
 }
+/* Styling the ScrollPane */
+.scroll-pane {
+    -fx-background-color: #f5f5f5; /* Light gray background for a clean look */
+    -fx-border-color: #dcdcdc; /* Subtle border */
+    -fx-border-width: 1px;
+    -fx-padding: 10px; /* Inner padding for spacing */
+}
+
+/* Remove ScrollPane's default focus border */
+.scroll-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Styling the ListView itself */
+.event-list {
+    -fx-background-color: transparent; /* Transparent to blend with ScrollPane */
+    -fx-padding: 5px; /* Small padding inside the ListView */
+}
+
+/* Styling individual ListCells in the ListView */
+.event-list .list-cell {
+    -fx-background-color: #ffffff; /* White background for each cell */
+    -fx-text-fill: #333333; /* Dark gray text for readability */
+    -fx-font-family: "Arial"; /* Clean, professional font */
+    -fx-font-size: 12px; /* Readable font size */
+    -fx-padding: 10px; /* Padding inside each cell */
+    -fx-border-color: #e0e0e0; /* Light gray border between cells */
+    -fx-border-width: 0 0 1 0; /* Only bottom border for separation */
+    -fx-alignment: TOP_LEFT; /* Align text to the top-left */
+}
+
+/* Styling empty cells */
+.event-list .list-cell:empty {
+    -fx-background-color: transparent; /* No background for empty cells */
+    -fx-border-width: 0; /* No border for empty cells */
+}
+
+/* Hover effect for interactivity */
+.event-list .list-cell:hover {
+    -fx-background-color: #f0f0f0; /* Light gray on hover */
+    -fx-cursor: hand; /* Hand cursor to indicate clickability */
+}
+
+/* Selected cell styling */
+.event-list .list-cell:selected {
+    -fx-background-color: #0078d4; /* Modern blue for selection */
+    -fx-text-fill: white; /* White text when selected */
+}
+
+/* ScrollBar styling for a sleek look */
+.scroll-pane > .scroll-bar:vertical,
+.scroll-pane > .scroll-bar:horizontal {
+    -fx-background-color: transparent; /* Transparent background */
+}
+
+.scroll-pane > .scroll-bar:vertical .thumb,
+.scroll-pane > .scroll-bar:horizontal .thumb {
+    -fx-background-color: #bbbbbb; /* Light gray thumb */
+    -fx-background-radius: 5px; /* Rounded edges */
+}
+
+.scroll-pane > .scroll-bar:vertical .thumb:hover,
+.scroll-pane > .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #999999; /* Darker gray on hover */
+}
+
+/* Remove increment/decrement buttons for a cleaner look */
+.scroll-pane > .scroll-bar .increment-button,
+.scroll-pane > .scroll-bar .decrement-button {
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+/* Styling the HBox container */
+
+
+/* Styling the TextField */
+.search-container .text-field {
+    -fx-background-color: #f9f9f9; /* Very light gray for the input area */
+    -fx-border-color: #e0e0e0; /* Light gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px; /* Slightly rounded corners */
+    -fx-background-radius: 5px;
+    -fx-padding: 8px; /* Comfortable padding */
+    -fx-text-fill: #333333; /* Dark text for readability */
+    -fx-font-family: "Arial"; /* Clean, professional font */
+    -fx-font-size: 14px; /* Matches your inline style */
+}
+
+/* Prompt text styling (placeholder) */
+.search-container .text-field:empty {
+    -fx-prompt-text-fill: #aaaaaa; /* Matches your inline #aaa */
+}
+
+/* Focus state for TextField */
+.search-container .text-field:focused {
+    -fx-border-color: #0078d4; /* Modern blue to indicate focus */
+    -fx-border-width: 1.5px; /* Slightly thicker border */
+    -fx-background-color: #ffffff; /* White background when focused */
+}
+
+/* Styling the Button */
+.search-container .button {
+    -fx-background-color: #0078d4; /* Modern blue for the button */
+    -fx-text-fill: white; /* White text for contrast */
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px; /* Matches your inline style */
+    -fx-padding: 8px 16px; /* Matches your inline style */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-background-radius: 5px;
+    -fx-cursor: hand; /* Hand cursor for clickability */
+}
+
+/* Hover effect for Button */
+.search-container .button:hover {
+    -fx-background-color: #005ea2; /* Darker blue on hover */
+}
+
+/* Pressed effect for Button */
+.search-container .button:pressed {
+    -fx-background-color: #004a83; /* Even darker blue when pressed */
+}
+
+/* Disabled state for Button (if applicable) */
+.search-container .button:disabled {
+    -fx-background-color: #cccccc; /* Grayed out */
+    -fx-text-fill: #666666; /* Darker gray text */
+    -fx-opacity: 0.7; /* Slightly faded */
+}
